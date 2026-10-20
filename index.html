@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F7F5F0">
+  <meta name="description" content="好きなときに、ひとつの言葉と出会う。背景と出典を添えた、私の名言集。">
+  <title>ことばの余白 — 名言ボット</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead"><a class="brand" href="./" aria-label="ことばの余白 ホーム"><span class="brand-mark" aria-hidden="true">「</span>ことばの余白</a><span class="edition">私の名言集</span></header>
+    <main>
+      <div class="intro"><p class="eyebrow">A MOMENT WITH WORDS</p><h1>いま、出会う言葉。</h1><p>少し立ち止まって、ひとつの言葉を。</p></div>
+      <section class="filters" aria-label="名言の絞り込み">
+        <label>人物<select id="author-filter" disabled><option value="">すべての人物</option></select></label>
+        <label>ジャンル<select id="genre-filter" disabled><option value="">すべてのジャンル</option></select></label>
+        <button type="button" id="reset" class="reset" disabled>絞り込みを解除</button>
+      </section>
+      <div class="collection-line"><p id="count">名言を読み込んでいます</p><span>言葉と、その背景</span></div>
+      <article id="quote-card" class="quote-card" hidden>
+        <div class="card-top"><p id="genres" class="tags"></p><span id="quote-id" class="quote-id"></span></div>
+        <div class="quote-content" aria-live="polite" aria-atomic="true">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote id="quote-text"></blockquote>
+          <div class="attribution"><p id="author"></p><span id="expression" class="expression"></span></div>
+        </div>
+        <div class="context"><h2>この言葉の背景</h2><p id="background"></p></div>
+        <details id="original-section"><summary>原文を読む<span aria-hidden="true">＋</span></summary><p id="original" dir="auto"></p></details>
+        <section class="source" aria-labelledby="source-heading"><h2 id="source-heading">出典</h2><p id="source-name"></p><p id="source-location"></p></section>
+      </article>
+      <section id="message" class="message" role="status" hidden></section>
+      <div class="draw-area"><button id="draw" class="draw" type="button" disabled>次の名言を引く <span aria-hidden="true">↗</span></button><p id="draw-hint">一巡するまで、同じ言葉は出ません。</p></div>
+      <noscript><p class="message">名言を表示するには、ブラウザのJavaScriptを有効にしてください。</p></noscript>
+    </main>
+    <footer><span>ことばの余白</span><p>登録データで出典確認済みの言葉を収録。<br>翻訳・意訳・要約は、各名言に区分を表示しています。</p></footer>
+  </div>
+</body>
+</html>
